@@ -27,6 +27,17 @@ int main(void){
     // Also apparently the correct format specifier for pointers is %p:
     printf("The value of ptr_to_a is (%p), which is a memory address\n", ptr_to_a);
     printf("The address of a (via &a) is %p\n", &a);
+    // Second Round of examples:
+    // init intval to a large number & 
+    // assign it as a void pointer so it can point to anything
+    int intval = 255957271;
+    void *vptr = &intval;
+    // Now print it as a int first then the same value as a char
+    printf ("The value at vptr as an int is %d\n", *((int *) vptr));
+    printf ("The value at vptr as a char is %d\n", *((char *) vptr));
+    // Doing some tests it clear that this is not exactly as expected since it
+    // gives the same number if it unsigned. So not sure what is happening.
+    // Needs further investigation.
     return 0;
 
 }
