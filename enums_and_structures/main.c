@@ -11,7 +11,6 @@ typedef unsigned char BYTE;
 // These are automatically assigned, but can be manually assigne with = INT
 // after the name (e.g., false = 0).
 typedef enum { false, true } BOOLEAN;
-
 typedef struct {
   BYTE red_pixel;
   BYTE green_pixel;
@@ -43,6 +42,8 @@ int main(void) {
   PIXEL pix;
   create_pixel(&pix, 149, 44, 255);
   printf("RGB of purple is rgb(%d, %d, %d).\n", pix.red_pixel, pix.green_pixel,
+         pix.blue_pixel);
+  printf("Hex of purple is #%x%x%x).\n", pix.red_pixel, pix.green_pixel,
          pix.blue_pixel);
 
   pix.red_pixel = 79;
