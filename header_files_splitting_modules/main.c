@@ -9,7 +9,8 @@
 
 int main(void){
     printf("The total is %d\n", add_vals(1, 2, 3));
-    printf("PI (%f) is an important constant in math\n", PI);
+    // You can use format specifiers to improve this as well
+    printf("PI (%.2f) is an important constant in math\n", PI);
 // Special type of if statement, seems to be mostly for debugging, I don't think
 // this is implmented very often in production ready code.
 #if 1
