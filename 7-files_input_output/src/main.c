@@ -5,6 +5,10 @@ int main(void){
     FILE *fp;
     int value;
     // Initially was full path, but appears to work as relative path too
+    // Note, that this is the relative path of where Make was used because it 
+    // calls the executable in that location not where the main.c file is. In 
+    // other words it should be next to the executable where ever that is
+    // created, not where the .c file is.
     fp = fopen("input.txt", "rb");
     // ALWAYS check to ensure that file exists before doing anything
     if (fp){

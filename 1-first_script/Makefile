@@ -1,3 +1,3 @@
 all:
-	gcc -Wall -o main my_first_script.c
+	gcc -Wall -o main src/my_first_script.c
 	./main

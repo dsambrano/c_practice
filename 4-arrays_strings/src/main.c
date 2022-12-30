@@ -15,7 +15,7 @@ int main(void){
     // or via a pointer reference, you get the same value.
     // Not sure how viable that is in practice.
     printf("The first and second element of a are %d and %d\n", a[0], a[1]);
-    printf("Or as pointers they are %d and %d\n", *a, *(a + 1));
+    printf("Or from pointers they are %d and %d\n", *a, *(a + 1));
 
 
     //Strings are just arrays of chars
@@ -61,7 +61,7 @@ int main(void){
     printf("How about dst - 3? (%s) and *(dst - 3) (%d)\n", (dst - 3), *(dst - 3));
     // Based on this, I would say that it is confirmed for the string value, but
     // the pointer is still a little confusing, not sure what we are getting the
-    // value we are getting. Currently 111
+    // value we are getting. Currently 111.
 
     // Here is a more practical way of manipulate strings after creation.
     int val = 12;

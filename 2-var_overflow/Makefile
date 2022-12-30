@@ -1,3 +1,3 @@
 all:
-	gcc -Wall -o main var_overflow.c
+	gcc -Wall -o main src/var_overflow.c
 	./main

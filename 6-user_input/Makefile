@@ -1,6 +1,6 @@
 all:
-	gcc -Wall -o main main.c
-	gcc -Wall -o calc calculator.c
+	gcc -Wall -o main src/main.c
+	gcc -Wall -o calc src/calculator.c
 	./main
 	./calc 4 + 9
 	./calc 69 - 42

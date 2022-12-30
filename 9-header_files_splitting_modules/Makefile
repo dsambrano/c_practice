@@ -1,3 +1,3 @@
 all:
-	gcc -Wall -o main main.c function.c
+	gcc -Wall -o main src/main.c src/function.c
 	./main
