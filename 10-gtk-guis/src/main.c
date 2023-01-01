@@ -13,6 +13,13 @@ int main (int argc, char *argv[]){
     // add callback function to button clicked and close app events
     g_signal_connect(btn, "clicked", G_CALLBACK(end_program), NULL);
     g_signal_connect(win, "delete_event", G_CALLBACK(end_program), NULL);
+
+    // Adding a label
+    GtkWidget *lbl = gtk_label_new("My Label");
+    gtk_container_add(GTK_CONTAINER(win), lbl);
+
+
+
     // Store the button in the window to be displayed
     gtk_container_add(GTK_CONTAINER(win), btn);
     // Show the window widget
