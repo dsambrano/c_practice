@@ -46,7 +46,7 @@ int main (int argc, char *argv[]){
     // Padding: is the white space added to end of widget after the other 
     //          spacing arugments are implemented
     gtk_box_pack_start(GTK_BOX(box), btn2, FALSE, FALSE, 0);
-    gtk_box_pack_start(GTK_BOX(box), lbl, FALSE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(box), lbl, FALSE, FALSE, 15);
     gtk_box_pack_start(GTK_BOX(box), btn, FALSE, FALSE, 0);
 
     // Add Box widget to window
