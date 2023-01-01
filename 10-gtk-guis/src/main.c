@@ -16,12 +16,17 @@ int main (int argc, char *argv[]){
 
     // Adding a label
     GtkWidget *lbl = gtk_label_new("My Label");
-    gtk_container_add(GTK_CONTAINER(win), lbl);
 
+    // Adding Box to store all widgets
+    // Creates a Vertical box with 5 pixels of spacing
+    GtkWidget *box = gtk_box_new(GTK_ORIENTATION_VERTICAL, 5);
+    // Add all widgets to box
+    // Adds to lbl to box with expand and fill set to true and 0 padding
+    gtk_box_pack_start(GTK_BOX(box), lbl, TRUE, TRUE, 0);
+    gtk_box_pack_start(GTK_BOX(box), btn, TRUE, TRUE, 0);
+    // Add Box widget to window
+    gtk_container_add(GTK_CONTAINER(win), box);
 
-
-    // Store the button in the window to be displayed
-    gtk_container_add(GTK_CONTAINER(win), btn);
     // Show the window widget
     gtk_widget_show_all(win);
     // Run the main loop
