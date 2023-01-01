@@ -35,22 +35,15 @@ int main (int argc, char *argv[]){
     // callback function might used/need
     g_signal_connect(btn2, "clicked", G_CALLBACK(button_counter), lbl);
 
-    // Adding Box to store all widgets
-    // Creates a Vertical box with 5 pixels of spacing
-    GtkWidget *box = gtk_box_new(GTK_ORIENTATION_VERTICAL, 5);
-    // Add all widgets to box
-    // Adds to lbl to box with expand and fill set to true and 0 padding
-    // Expand: Resizes when window size changes
-    // Fill: (no effect if expand no set to TRUE) does the widget fill up the 
-    //       available space or does the cell adjust but widget stays the same
-    // Padding: is the white space added to end of widget after the other 
-    //          spacing arugments are implemented
-    gtk_box_pack_start(GTK_BOX(box), btn2, FALSE, FALSE, 0);
-    gtk_box_pack_start(GTK_BOX(box), lbl, FALSE, FALSE, 15);
-    gtk_box_pack_start(GTK_BOX(box), btn, FALSE, FALSE, 0);
+    // Switching to Tables instead of Box
+    // Table was deprecated in place of GtkGrid so switched to that instead
+    GtkWidget *grid = gtk_grid_new();
+    gtk_grid_attach(GTK_GRID(grid), lbl, 0, 0, 1, 1);
+    gtk_grid_attach(GTK_GRID(grid), btn2, 1, 0, 1, 1);
+    gtk_grid_attach(GTK_GRID(grid), btn, 0, 1, 2, 1);
 
     // Add Box widget to window
-    gtk_container_add(GTK_CONTAINER(win), box);
+    gtk_container_add(GTK_CONTAINER(win), grid);
 
     // Show the window widget
     gtk_widget_show_all(win);
