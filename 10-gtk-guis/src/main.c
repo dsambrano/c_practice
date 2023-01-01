@@ -19,34 +19,34 @@ int main (int argc, char *argv[]){
     gtk_init(&argc, &argv);
     
     // Creating a GTK window
-    GtkWidget *win = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+    GtkWidget *window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
     
     // Creating GTK butten widget with label
-    GtkWidget *btn = gtk_button_new_with_label("Close Window");
-    GtkWidget *btn2 = gtk_button_new_with_label("Add Count");
+    GtkWidget *close_button = gtk_button_new_with_label("Close Window");
+    GtkWidget *count_button = gtk_button_new_with_label("Add Count");
 
     // Adding a label
     GtkWidget *lbl = gtk_label_new("My Label");
     
     // add callback function to button clicked and close app events
-    g_signal_connect(btn, "clicked", G_CALLBACK(end_program), NULL);
-    g_signal_connect(win, "delete_event", G_CALLBACK(end_program), NULL);
+    g_signal_connect(close_button, "clicked", G_CALLBACK(end_program), NULL);
+    g_signal_connect(window, "delete_event", G_CALLBACK(end_program), NULL);
     // added lbl as ptr for callback function. This can be any pointer that the
     // callback function might used/need
-    g_signal_connect(btn2, "clicked", G_CALLBACK(button_counter), lbl);
+    g_signal_connect(count_button, "clicked", G_CALLBACK(button_counter), lbl);
 
     // Switching to Tables instead of Box
     // Table was deprecated in place of GtkGrid so switched to that instead
     GtkWidget *grid = gtk_grid_new();
     gtk_grid_attach(GTK_GRID(grid), lbl, 0, 0, 1, 1);
-    gtk_grid_attach(GTK_GRID(grid), btn2, 1, 0, 1, 1);
-    gtk_grid_attach(GTK_GRID(grid), btn, 0, 1, 2, 1);
+    gtk_grid_attach(GTK_GRID(grid), count_button, 1, 0, 1, 1);
+    gtk_grid_attach(GTK_GRID(grid), close_button, 0, 1, 2, 1);
 
     // Add Box widget to window
-    gtk_container_add(GTK_CONTAINER(win), grid);
+    gtk_container_add(GTK_CONTAINER(window), grid);
 
     // Show the window widget
-    gtk_widget_show_all(win);
+    gtk_widget_show_all(window);
 
     // Run the main loop
     gtk_main();
