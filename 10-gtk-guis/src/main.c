@@ -31,6 +31,8 @@ int main (int argc, char *argv[]){
     // add callback function to button clicked and close app events
     g_signal_connect(btn, "clicked", G_CALLBACK(end_program), NULL);
     g_signal_connect(win, "delete_event", G_CALLBACK(end_program), NULL);
+    // added lbl as ptr for callback function. This can be any pointer that the
+    // callback function might used/need
     g_signal_connect(btn2, "clicked", G_CALLBACK(button_counter), lbl);
 
     // Adding Box to store all widgets
@@ -38,14 +40,22 @@ int main (int argc, char *argv[]){
     GtkWidget *box = gtk_box_new(GTK_ORIENTATION_VERTICAL, 5);
     // Add all widgets to box
     // Adds to lbl to box with expand and fill set to true and 0 padding
-    gtk_box_pack_start(GTK_BOX(box), lbl, TRUE, TRUE, 0);
-    gtk_box_pack_start(GTK_BOX(box), btn, TRUE, TRUE, 0);
+    // Expand: Resizes when window size changes
+    // Fill: (no effect if expand no set to TRUE) does the widget fill up the 
+    //       available space or does the cell adjust but widget stays the same
+    // 
+    gtk_box_pack_start(GTK_BOX(box), btn2, TRUE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(box), lbl, TRUE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(box), btn, TRUE, FALSE, 0);
+
     // Add Box widget to window
     gtk_container_add(GTK_CONTAINER(win), box);
 
     // Show the window widget
     gtk_widget_show_all(win);
+
     // Run the main loop
     gtk_main();
+
     return 0;
 }
