@@ -43,10 +43,11 @@ int main (int argc, char *argv[]){
     // Expand: Resizes when window size changes
     // Fill: (no effect if expand no set to TRUE) does the widget fill up the 
     //       available space or does the cell adjust but widget stays the same
-    // 
-    gtk_box_pack_start(GTK_BOX(box), btn2, TRUE, FALSE, 0);
-    gtk_box_pack_start(GTK_BOX(box), lbl, TRUE, FALSE, 0);
-    gtk_box_pack_start(GTK_BOX(box), btn, TRUE, FALSE, 0);
+    // Padding: is the white space added to end of widget after the other 
+    //          spacing arugments are implemented
+    gtk_box_pack_start(GTK_BOX(box), btn2, FALSE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(box), lbl, FALSE, FALSE, 0);
+    gtk_box_pack_start(GTK_BOX(box), btn, FALSE, FALSE, 0);
 
     // Add Box widget to window
     gtk_container_add(GTK_CONTAINER(win), box);
