@@ -60,6 +60,7 @@ int main (int argc, char *argv[]){
     // Switching to Tables instead of Box
     // Table was deprecated in place of GtkGrid so switched to that instead
     GtkWidget *grid = gtk_grid_new();
+    // Row, Column, Width, Height
     gtk_grid_attach(GTK_GRID(grid), lbl, 0, 0, 1, 1);
     gtk_grid_attach(GTK_GRID(grid), count_button, 1, 0, 1, 1);
     gtk_grid_attach(GTK_GRID(grid), close_button, 0, 1, 2, 1);
